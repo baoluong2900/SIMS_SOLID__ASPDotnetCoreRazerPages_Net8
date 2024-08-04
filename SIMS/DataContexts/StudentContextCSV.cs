@@ -38,23 +38,15 @@ namespace SIMS.DataContexts
                         {
                             Student student = new Student
                             {
-                                StudentID = int.Parse(values[0]),
                                 StudentNo = values[1],
                                 LastName = values[2],
                                 FirstName = values[3],
                                 UrlHandle = values[4],
                                 Email = values[5],
                                 DateOfBirth = DateTime.Parse(values[6]),
-                                UserName = values[7]
                             };
 
                             students.Add(student);
-
-                            // Update nextStudentId if needed
-                            if (student.StudentID >= nextStudentId)
-                            {
-                                nextStudentId = student.StudentID + 1;
-                            }
                         }
                     }
                 }
@@ -71,7 +63,7 @@ namespace SIMS.DataContexts
                 // Write data rows
                 foreach (var student in Students)
                 {
-                    writer.WriteLine($"{student.StudentID},{student.StudentNo},{student.LastName},{student.FirstName},{student.UrlHandle},{student.Email},{student.DateOfBirth:yyyy-MM-dd},{student.UserName}");
+                    writer.WriteLine($"{student.StudentNo},{student.LastName},{student.FirstName},{student.UrlHandle},{student.Email},{student.DateOfBirth:yyyy-MM-dd}");
                 }
             }
         }
@@ -83,12 +75,12 @@ namespace SIMS.DataContexts
             throw new NotImplementedException();
         }
 
-        public void DeleteStudent(int studentId)
+        public void DeleteStudent(string studentNo)
         {
             throw new NotImplementedException();
         }
 
-        public Student GetStudent(int studentId)
+        public Student GetStudent(string studentNo)
         {
             throw new NotImplementedException();
         }

@@ -1,5 +1,4 @@
 ﻿using AspNetCoreHero.ToastNotification.Abstractions;
-using AspNetCoreHero.ToastNotification.Notyf;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SIMS.Model;
@@ -7,7 +6,7 @@ using SIMS.Services;
 
 namespace SIMS.Pages.Admin.Students
 {
-    public class CreateModel : PageModel
+    public class EditModel : PageModel
     {
         private readonly StudentService _service;
 
@@ -16,13 +15,14 @@ namespace SIMS.Pages.Admin.Students
         public List<Student> StudentList { get; set; }
 
         [BindProperty]
-        public Student NewStudent { get; set; }
+        public Student OldStudent { get; set; }
 
-        public IActionResult OnGet()
+        public async Task<IActionResult> OnGetAsync(string id)
         {
+            OldStudent = _service.GetStudent(id);
             return Page();
         }
-        public CreateModel(StudentService service, INotyfService notifyService)
+        public EditModel(StudentService service, INotyfService notifyService)
         {
             _service = service;
             _notifyService = notifyService;
@@ -32,22 +32,18 @@ namespace SIMS.Pages.Admin.Students
         {
             try
             {
-                if (!ModelState.IsValid || NewStudent == null)
+                if (!ModelState.IsValid || OldStudent == null)
                 {
                     return Page();
                 }
-                bool checkStudentNo = _service.GetStudents().Any(x => x.StudentNo == NewStudent.StudentNo);
-                if (checkStudentNo)
-                {
-                    _notifyService.Warning("Mã sinh viên đã tồn tại");
-                    return Page();
-                }
-                _service.AddStudent(NewStudent);
-                // Logic to save the student to the database goes here
-                _notifyService.Success("Thêm thành công");
+                _service.UpdateStudent(OldStudent);
+                // Logic to update the student to the database goes here
+                _notifyService.Success("Cập nhật thành công");
                 return RedirectToPage("/Admin/Students/Index");
+
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 _notifyService.Error("Đã có lỗi ngoại lệ xảy ra");
                 return Page();
             }

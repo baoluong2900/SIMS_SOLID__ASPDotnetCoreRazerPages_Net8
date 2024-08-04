@@ -1,0 +1,44 @@
+﻿@page
+@model SIMS.Pages.Admin.Students.EditModel
+@{
+    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Chỉnh sửa thông tin sinh viên";
+}
+<h2>Cập nhật thông tin sinh viên</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="OldStudent.StudentNo" class="control-label"></label>
+        <input asp-for="OldStudent.StudentNo" class="form-control" readonly />
+        <span asp-validation-for="OldStudent.StudentNo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OldStudent.LastName" class="control-label"></label>
+        <input asp-for="OldStudent.LastName" class="form-control" />
+        <span asp-validation-for="OldStudent.LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OldStudent.FirstName" class="control-label"></label>
+        <input asp-for="OldStudent.FirstName" class="form-control" />
+        <span asp-validation-for="OldStudent.FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OldStudent.UrlHandle" class="control-label"></label>
+        <input asp-for="OldStudent.UrlHandle" class="form-control" />
+        <span asp-validation-for="OldStudent.UrlHandle" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OldStudent.Email" class="control-label"></label>
+        <input asp-for="OldStudent.Email" class="form-control" />
+        <span asp-validation-for="OldStudent.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OldStudent.DateOfBirth" class="control-label"></label>
+        <input asp-for="OldStudent.DateOfBirth" class="form-control" type="date" />
+        <span asp-validation-for="OldStudent.DateOfBirth" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Lưu</button>
+        <a asp-page="/Admin/Students/Index" class="btn btn-secondary">Quay lại</a>
+    </div>
+</form>

@@ -10,6 +10,7 @@ namespace SIMS.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+
         public INotyfService _notifyService { get; }
 
         private readonly AuthService _service;
@@ -26,7 +27,7 @@ namespace SIMS.Pages
 
         public void OnGet()
         {
-
+    
         }
         public async Task<IActionResult> OnPostIndexAsync()
         {
@@ -45,13 +46,13 @@ namespace SIMS.Pages
                     switch (role.ToUpper())
                     {
                         case "STUDENT":
-                            return Redirect("/Student");
+                            return Redirect("/Students/Personal");
                         case "ADMIN":
                             return Redirect("/Admin/Dashboard");
                         case "TEACHER":
-                            return Redirect("/Teacher");
+                            return Redirect("/Teacher/Courses");
                         default:
-                            _notifyService.Warning("Vai trò không hợp lệ");
+                            _notifyService.Error("Có lỗi xảy ra");
                             return Page();
                     }
                 }

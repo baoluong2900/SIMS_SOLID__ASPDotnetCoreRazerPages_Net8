@@ -7,7 +7,7 @@ namespace SIMS.Abstractions
         IEnumerable<Student> GetStudents();
         void AddStudent(Student student);
         void UpdateStudent(Student student);
-        void DeleteStudent(int studentId);
-        Student GetStudent(int studentId);
+        void DeleteStudent(string studentNo);
+        Student GetStudent(string studentNo);
     }
 }

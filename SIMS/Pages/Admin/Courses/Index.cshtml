@@ -1,0 +1,44 @@
+﻿@page
+@model SIMS.Pages.Admin.Courses.IndexModel
+@{
+    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Quản lý sinh viên";
+}
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Danh sách sinh viên</h1>
+    <a asp-page="/Admin/Courses/Create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <i class="fas fa-plus-circle fa-sm text-white-50"></i> Thêm sinh viên
+    </a>
+</div>
+
+<!-- DataTales Example -->
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách lớp học</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Mã Lớp Học</th>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.CourseList.Count; i++)
+                    {
+                        var course = Model.CourseList[i];
+                        <tr>
+                            <td>@i</td>
+                            <td>@course.CourseCode</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

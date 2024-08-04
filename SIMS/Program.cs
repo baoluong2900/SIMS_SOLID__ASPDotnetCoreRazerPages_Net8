@@ -13,10 +13,12 @@ builder.Services.AddNotyf(config => { config.DurationInSeconds = 3; config.IsDis
 builder.Services.AddScoped<CSVReader>();
 builder.Services.AddScoped<StudentService>();
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<CourseService>();
 
 builder.Services.AddSingleton<ICSVReader, CSVReader>();
 builder.Services.AddSingleton<IStudentService, StudentService>();
 builder.Services.AddSingleton<IAuthService, AuthService>();
+builder.Services.AddSingleton<ICourseService, CourseService>();
 
 var app = builder.Build();
 
@@ -36,5 +38,9 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapRazorPages();
+});
 app.UseNotyf();
 app.Run();

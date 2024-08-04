@@ -31,7 +31,7 @@ namespace SIMS.Services
 
         public void UpdateStudent(Student student)
         {
-            var existingStudent = _students.FirstOrDefault(s => s.StudentID == student.StudentID);
+            var existingStudent = _students.FirstOrDefault(s => s.StudentNo == student.StudentNo);
             if (existingStudent != null)
             {
                 existingStudent.FirstName = student.FirstName;
@@ -40,9 +40,9 @@ namespace SIMS.Services
             }
         }
 
-        public void DeleteStudent(int studentId)
+        public void DeleteStudent(string studentNo)
         {
-            var student = _students.FirstOrDefault(s => s.StudentID == studentId);
+            var student = _students.FirstOrDefault(s => s.StudentNo == studentNo);
             if (student != null)
             {
                 _students.Remove(student);
@@ -50,9 +50,9 @@ namespace SIMS.Services
             }
         }
 
-        public Student GetStudent(int studentId)
+        public Student GetStudent(string studentNo)
         {
-            return _students.FirstOrDefault(s => s.StudentID == studentId);
+            return _students.FirstOrDefault(s => s.StudentNo == studentNo);
         }
 
         private void SaveChanges()

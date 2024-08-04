@@ -1,4 +1,42 @@
 ﻿@page
 @model SIMS.Pages.Admin.Students.CreateModel
 @{
+    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Thêm thông tin sinh viên";
 }
+<h2>Thêm Thông tin sinh viên</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="NewStudent.StudentNo" class="control-label"></label>
+        <input asp-for="NewStudent.StudentNo" class="form-control" />
+        <span asp-validation-for="NewStudent.StudentNo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewStudent.LastName" class="control-label"></label>
+        <input asp-for="NewStudent.LastName" class="form-control" />
+        <span asp-validation-for="NewStudent.LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewStudent.FirstName" class="control-label"></label>
+        <input asp-for="NewStudent.FirstName" class="form-control" />
+        <span asp-validation-for="NewStudent.FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewStudent.UrlHandle" class="control-label"></label>
+        <input asp-for="NewStudent.UrlHandle" class="form-control" />
+        <span asp-validation-for="NewStudent.UrlHandle" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewStudent.Email" class="control-label"></label>
+        <input asp-for="NewStudent.Email" class="form-control" />
+        <span asp-validation-for="NewStudent.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewStudent.DateOfBirth" class="control-label"></label>
+        <input asp-for="NewStudent.DateOfBirth" class="form-control" type="date" />
+        <span asp-validation-for="NewStudent.DateOfBirth" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-page="/Admin/Students/Index" class="btn btn-secondary">Cancel</a>
+</form>

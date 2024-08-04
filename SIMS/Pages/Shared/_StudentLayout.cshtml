@@ -38,14 +38,6 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Thống kê</span>
-                </a>
-            </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -55,31 +47,24 @@
             </div>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" asp-page="/Admin/Students/Index">
+                <a class="nav-link" asp-page="/Students/Personal/Index">
                     <i class="fas fa-fw fa-users"></i>
-                    <span>Quản lý sinh viên</span>
+                    <span>Quản lý thông tin cá nhân</span>
                 </a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" asp-page="/Admin/Teachers">
+                <a class="nav-link" asp-page="/Students/Courses/Index">
                     <i class="fas fa-fw fa-user-secret"></i>
-                    <span>Quản lý giáo viên</span>
+                    <span>Quản lý môn học</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/Admin/Courses">
+                <a class="nav-link" asp-page="/Students/Grade/Index">
                     <i class="fas fa-fw fa-list"></i>
-                    <span>Quản lý Lớp họp</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="/Admin/Subject">
-                    <i class="fas fa-fw fa-book"></i>
-                    <span>Quản lý Môn học</span>
+                    <span>Quản lý điểm thi </span>
                 </a>
             </li>
 

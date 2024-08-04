@@ -4,16 +4,16 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SIMS.Model;
 using SIMS.Services;
 
-namespace SIMS.Pages.Admin.Students
+namespace SIMS.Pages.Admin.Courses
 {
     public class IndexModel : PageModel
     {
-        private readonly StudentService _service;
+        private readonly CourseService _service;
         public INotyfService _notifyService { get; }
-        public List<Student> StudentList { get; set; }
+        public List<Course> CourseList { get; set; }
 
 
-        public IndexModel(StudentService service, INotyfService notifyService)
+        public IndexModel(CourseService service, INotyfService notifyService)
         {
             _service = service;
             _notifyService = notifyService;
@@ -21,7 +21,7 @@ namespace SIMS.Pages.Admin.Students
 
         public void OnGet()
         {
-            StudentList = _service.GetStudents().ToList();
+            CourseList = _service.GetCourses().ToList();
         }
 
         public async Task<IActionResult> OnPostDeleteAsync(string studentNo)
@@ -32,7 +32,7 @@ namespace SIMS.Pages.Admin.Students
             }
 
             // Logic to delete student based on studentNo
-            _service.DeleteStudent(studentNo);
+            _service.DeleteCourse(studentNo);
             _notifyService.Success("Xóa thành công");
 
             // Redirect to index or wherever needed after deletion

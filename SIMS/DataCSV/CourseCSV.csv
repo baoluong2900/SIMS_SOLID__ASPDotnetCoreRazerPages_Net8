@@ -1,0 +1,6 @@
+﻿CourseCode,CourseName,StartDate,EndDate,Description
+CS101,Introduction to Programming,2024-01-10,2024-05-15,An introductory course to programming with a focus on C#.
+CS102,Data Structures and Algorithms,2024-02-01,2024-06-15,An in-depth course on data structures and algorithms.
+CS103,Web Development with ASP.NET,2024-03-01,2024-07-15,Learn to build web applications using ASP.NET Core.
+CS104,Database Systems,2024-04-01,2024-08-15,An overview of database systems and SQL.
+CS105,Software Engineering Principles,2024-05-01,2024-09-15,Study software engineering methodologies and practices.

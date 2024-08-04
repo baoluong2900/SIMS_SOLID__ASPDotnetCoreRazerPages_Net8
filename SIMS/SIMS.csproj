@@ -7,19 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="DataCSV\CourseCSV.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="DataCSV\CourseCSV.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AspNetCoreHero.ToastNotification" Version="1.1.0" />
     <PackageReference Include="CsvHelper" Version="33.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Admin\Courses\" />
-    <Folder Include="Pages\Admin\Grades\" />
     <Folder Include="Pages\Admin\Teachers\" />
-    <Folder Include="Pages\Students\Courses\" />
-    <Folder Include="Pages\Students\Grade\" />
-    <Folder Include="Pages\Students\Personal\" />
-    <Folder Include="Pages\Teacher\Grades\" />
-    <Folder Include="Pages\Teacher\Courses\" />
   </ItemGroup>
 
   <ItemGroup>
