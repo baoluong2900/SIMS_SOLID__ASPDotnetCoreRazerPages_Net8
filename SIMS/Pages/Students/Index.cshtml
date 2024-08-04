@@ -1,0 +1,14 @@
+﻿@page
+@model SIMS.Pages.Students.IndexModel
+@{
+}
+<tbody>
+    @foreach (var student in Model.StudentList)
+    {
+        <tr>
+            <td>@student.FirstName</td>
+            <td>@student.LastName</td>
+            <td>@student.DateOfBirth.ToString("MM/dd/yyyy")</td>
+        </tr>
+    }
+</tbody>

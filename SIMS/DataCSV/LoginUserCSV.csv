@@ -1,0 +1,7 @@
+﻿UserName,Password,Role
+student1,password123,STUDENT
+teacher1,password123,TEACHER
+admin,admin123,ADMIN
+student2,password456,STUDENT
+teacher2,password456,TEACHER
+admin2,password456,ADMIN

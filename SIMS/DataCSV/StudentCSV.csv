@@ -1,0 +1,7 @@
+StudentID,StudentNo,LastName,FirstName,UrlHandle,Email,DateOfBirth,UserName,Password
+1,S001,Nguyen,Van A,url_handle_a,van.a@example.com,1995-01-01,student1
+2,S002,Tran,Thi B,url_handle_b,thi.b@example.com,1996-02-15,student2
+3,S003,Le,Van C,url_handle_c,van.c@example.com,1994-03-20,student3
+4,S004,Pham,Thi D,url_handle_d,thi.d@example.com,1997-04-10,student4
+5,S005,Hoang,Van E,url_handle_e,van.e@example.com,1995-05-05,student5
+
