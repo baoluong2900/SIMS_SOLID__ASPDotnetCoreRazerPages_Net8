@@ -45,7 +45,7 @@ namespace SIMS.Pages
                     switch (role.ToUpper())
                     {
                         case "STUDENT":
-                            return Redirect("/Student/Index");
+                            return Redirect("/Student");
                         case "ADMIN":
                             return Redirect("/Admin/Dashboard");
                         case "TEACHER":
