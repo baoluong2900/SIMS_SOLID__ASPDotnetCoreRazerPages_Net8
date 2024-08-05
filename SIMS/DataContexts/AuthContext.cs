@@ -8,7 +8,6 @@ namespace SIMS.DataContexts
         private readonly string filePath;
         public List<UserLogin> UserLogins { get; set; }
 
-
         public AuthContext(string filePath, string userName, string password)
         {
             this.filePath = filePath;

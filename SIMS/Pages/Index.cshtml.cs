@@ -46,7 +46,7 @@ namespace SIMS.Pages
                     switch (userLogin.Role.ToUpper())
                     {
                         case "STUDENT":
-                            return RedirectToPage("/Students/Personal/Index", new { id = "S003" });
+                            return RedirectToPage("/Students/Personal/Index", new { id = "SC05" });
                         case "ADMIN":
                             return Redirect("/Admin/Dashboard");
                         case "TEACHER":

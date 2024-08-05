@@ -22,6 +22,11 @@ namespace SIMS.Services
             return _grades;
         }
 
+        public IEnumerable<Grade> GetGradesByStudentId(string studentId)
+        {
+            return _grades.Where(x=> x.StudentNo == studentId);
+        }
+
         public void AddGrade(Grade grade)
         {
             _grades.Add(grade);

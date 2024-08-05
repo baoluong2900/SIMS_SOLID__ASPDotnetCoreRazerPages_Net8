@@ -9,5 +9,7 @@ namespace SIMS.Abstractions
         void UpdateStudentCourse(StudentCourse studentCourse);
         void DeleteStudentCourse(string studentCourseNo);
         StudentCourse GetStudentCourse(string studentCourseNo);
+
+        IEnumerable<StudentCourse> GetStudentCoursesByStudentNo(string studentNo);
     }
 }

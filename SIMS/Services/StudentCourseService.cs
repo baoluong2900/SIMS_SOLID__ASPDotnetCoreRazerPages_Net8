@@ -20,6 +20,11 @@ namespace SIMS.Services
         {
             return _studentCourses;
         }
+
+        public IEnumerable<StudentCourse> GetStudentCoursesByStudentNo(string studentNo)
+        {
+            return _studentCourses.Where(x=>x.StudentNo == studentNo);
+        }
         public void AddStudentCourse(StudentCourse studentCourse)
         {
             _studentCourses.Add(studentCourse);

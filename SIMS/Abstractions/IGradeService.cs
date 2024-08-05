@@ -9,5 +9,7 @@ namespace SIMS.Abstractions
         void UpdateGrade(Grade Grade);
         void DeleteGrade(string GradeId);
         Grade GetGrade(string GradeId);
+
+        IEnumerable<Grade> GetGradesByStudentId(string studentId);
     }
 }

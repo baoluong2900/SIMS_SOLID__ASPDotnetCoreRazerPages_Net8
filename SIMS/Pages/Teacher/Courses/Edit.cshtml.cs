@@ -17,10 +17,9 @@ namespace SIMS.Pages.Teacher.Courses
         [BindProperty]
         public StudentCourse OldStudentCourse { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(string id)
+        public void OnGet(string id)
         {
             OldStudentCourse = _service.GetStudentCourse(id);
-            return Page();
         }
         public EditModel(StudentCourseService service, INotyfService notifyService)
         {
