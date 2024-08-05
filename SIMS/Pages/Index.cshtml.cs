@@ -39,14 +39,14 @@ namespace SIMS.Pages
                     return Page();
                 }
 
-                var role = _service.Login(UserViewModel.UserName, UserViewModel.Password);
+                var userLogin = _service.Login(UserViewModel.UserName, UserViewModel.Password);
 
-                if (!string.IsNullOrEmpty(role))
+                if (!string.IsNullOrEmpty(userLogin.Role))
                 {
-                    switch (role.ToUpper())
+                    switch (userLogin.Role.ToUpper())
                     {
                         case "STUDENT":
-                            return Redirect("/Students/Personal");
+                            return RedirectToPage("/Students/Personal/Index", new { id = "S003" });
                         case "ADMIN":
                             return Redirect("/Admin/Dashboard");
                         case "TEACHER":

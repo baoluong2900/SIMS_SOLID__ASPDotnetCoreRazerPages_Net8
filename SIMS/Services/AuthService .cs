@@ -22,14 +22,14 @@ namespace SIMS.Services
             // Implement logout logic here if needed
         }
 
-        public string Login(string username, string password)
+        public UserLogin Login(string username, string password)
         {
             var user = _userLogins.FirstOrDefault(u => u.UserName == username && u.Password == password);
             if (user != null)
             {
-                return user.Role;
+                return user;
             }
-            return string.Empty;
+            return null;
         }
     }
 }

@@ -36,6 +36,9 @@ namespace SIMS.Services
             {
                 existingStudent.FirstName = student.FirstName;
                 existingStudent.LastName = student.LastName;
+                existingStudent.UrlHandle = student.UrlHandle;
+                existingStudent.Email = student.Email;
+                existingStudent.DateOfBirth = student.DateOfBirth;
                 SaveChanges();
             }
         }

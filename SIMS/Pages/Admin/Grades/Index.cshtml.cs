@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SIMS.Model;
 using SIMS.Services;
 
-namespace SIMS.Pages.Teacher.Grades
+namespace SIMS.Pages.Admin.Grades
 {
     public class IndexModel : PageModel
     {

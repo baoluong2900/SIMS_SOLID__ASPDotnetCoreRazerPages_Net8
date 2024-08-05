@@ -48,7 +48,7 @@ namespace SIMS.DataContexts
             return userLogins;
         }
 
-        public string Login(string username, string password)
+        public UserLogin Login(string username, string password)
         {
             throw new NotImplementedException();
         }

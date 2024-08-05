@@ -1,8 +1,10 @@
-﻿namespace SIMS.Abstractions
+﻿using SIMS.Model;
+
+namespace SIMS.Abstractions
 {
     public interface IAuthService
     {
-        string Login(string username, string password);
+        UserLogin Login(string username, string password);
         void Logout();
     }
 }

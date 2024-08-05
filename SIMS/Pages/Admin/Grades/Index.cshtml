@@ -1,14 +1,14 @@
 ﻿@page
-@model SIMS.Pages.Teacher.Grades.IndexModel
+@model SIMS.Pages.Admin.Grades.IndexModel
 @{
-    Layout = "~/Pages/Shared/_TeacherLayout.cshtml";
+    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
     ViewData["Title"] = "Hệ thống quản lý sinh viên";
 }
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Danh sách điểm</h1>
-    <a asp-page="/Teacher/Grades/Create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+    <a asp-page="/Admin/Grades/Create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
         <i class="fas fa-plus-circle fa-sm text-white-50"></i> Thêm điểm
     </a>
 </div>
@@ -42,7 +42,7 @@
                             <td>@grade.CourseCode</td>
                             <td>@grade.Score</td>
                             <td>
-                                <a class="anticon anticon-edit btn btn-warning btn-tone m-r-5" asp-page="/Teacher/Grades/Edit" asp-route-id="@grade.GradeId">
+                                <a class="anticon anticon-edit btn btn-warning btn-tone m-r-5" asp-page="/Admin/Grades/Edit" asp-route-id="@grade.GradeId">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 

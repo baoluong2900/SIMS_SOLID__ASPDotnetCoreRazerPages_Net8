@@ -61,13 +61,6 @@
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" asp-page="/Teacher/Students/Index">
-                    <i class="fas fa-fw fa-list"></i>
-                    <span>Quản lý sinh viên </span>
-                </a>
-            </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -284,7 +277,7 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                                <a class="dropdown-item" href="/" onclick="logoutAndRedirect(); return false;">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>

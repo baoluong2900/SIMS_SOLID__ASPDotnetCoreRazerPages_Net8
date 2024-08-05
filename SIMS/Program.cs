@@ -14,11 +14,15 @@ builder.Services.AddScoped<CSVReader>();
 builder.Services.AddScoped<StudentService>();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<CourseService>();
+builder.Services.AddScoped<GradeService>();
+builder.Services.AddScoped<StudentCourseService>();
 
 builder.Services.AddSingleton<ICSVReader, CSVReader>();
 builder.Services.AddSingleton<IStudentService, StudentService>();
 builder.Services.AddSingleton<IAuthService, AuthService>();
 builder.Services.AddSingleton<ICourseService, CourseService>();
+builder.Services.AddSingleton<IGradeService, GradeService>();
+builder.Services.AddSingleton<IStudentCourseService,StudentCourseService>();
 
 var app = builder.Build();
 
