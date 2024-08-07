@@ -1,4 +1,33 @@
 ﻿@page
 @model SIMS.Pages.Admin.Courses.EditModel
 @{
+    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Thêm thông tin sinh viên";
 }
+<h2>Thêm Thông tin sinh viên</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="OldCourse.CourseCode" class="control-label"></label>
+        <input asp-for="OldCourse.CourseCode" class="form-control" />
+        <span asp-validation-for="OldCourse.CourseCode" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OldCourse.CourseName" class="control-label"></label>
+        <input asp-for="OldCourse.CourseName" class="form-control" />
+        <span asp-validation-for="OldCourse.CourseName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="OldCourse.StartDate" class="control-label"></label>
+        <input asp-for="OldCourse.StartDate" class="form-control" type="date" />
+        <span asp-validation-for="OldCourse.StartDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OldCourse.EndDate" class="control-label"></label>
+        <input asp-for="OldCourse.EndDate" class="form-control" type="date" />
+        <span asp-validation-for="OldCourse.EndDate" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-page="/Admin/Courses/Index" class="btn btn-secondary">Cancel</a>
+</form>

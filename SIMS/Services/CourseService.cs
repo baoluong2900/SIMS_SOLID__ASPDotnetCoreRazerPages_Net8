@@ -23,12 +23,6 @@ namespace SIMS.Services
             return _courses;
         }
 
-        public void AddStudent(Course student)
-        {
-            _courses.Add(student);
-            SaveChanges();
-        }
-
         private void SaveChanges()
         {
             using var writer = new StreamWriter(_filePath);
@@ -43,17 +37,31 @@ namespace SIMS.Services
 
         public void AddCourse(Course course)
         {
-            throw new NotImplementedException();
+            _courses.Add(course);
+            SaveChanges();
         }
 
         public void UpdateCourse(Course course)
         {
-            throw new NotImplementedException();
+            var existingCourse = _courses.FirstOrDefault(s => s.CourseCode == course.CourseCode);
+            if (existingCourse != null)
+            {
+                existingCourse.CourseName = course.CourseName;
+                // cập nhạt thêm
+                existingCourse.Description = course.Description;
+                
+                SaveChanges();
+            }
         }
 
         public void DeleteCourse(string courseId)
         {
-            throw new NotImplementedException();
+            var course = _courses.FirstOrDefault(s => s.CourseCode == courseId);
+            if (course != null)
+            {
+                _courses.Remove(course);
+                SaveChanges();
+            }
         }
 
         public Course GetCourse(string courseId)
