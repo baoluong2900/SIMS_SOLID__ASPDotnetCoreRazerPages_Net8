@@ -4,48 +4,56 @@
     Layout = "~/Pages/Shared/_StudentLayout.cshtml";
     ViewData["Title"] = "Hệ thống quản lý sinh viên";
 }
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách điểm</h6>
+    </div>
+    <div class="card-body">
+       
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="OldStudentCourse.StudentNo" class="control-label"></label>
+                <input asp-for="OldStudentCourse.StudentNo" class="form-control" readonly />
+                <span asp-validation-for="OldStudentCourse.StudentNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OldStudentCourse.LastName" class="control-label"></label>
+                <input asp-for="OldStudentCourse.LastName" class="form-control" />
+                <span asp-validation-for="OldStudentCourse.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OldStudentCourse.FirstName" class="control-label"></label>
+                <input asp-for="OldStudentCourse.FirstName" class="form-control" />
+                <span asp-validation-for="OldStudentCourse.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OldStudentCourse.UrlHandle" class="control-label"></label>
+                <input asp-for="OldStudentCourse.UrlHandle" class="form-control" />
+                <span asp-validation-for="OldStudentCourse.UrlHandle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OldStudentCourse.Email" class="control-label"></label>
+                <input asp-for="OldStudentCourse.Email" class="form-control" />
+                <span asp-validation-for="OldStudentCourse.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OldStudentCourse.DateOfBirth" class="control-label"></label>
+                <input asp-for="OldStudentCourse.DateOfBirth" class="form-control" type="date" />
+                <span asp-validation-for="OldStudentCourse.DateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OldStudentCourse.CourseCode" class="control-label"></label>
+                <input asp-for="OldStudentCourse.CourseCode" class="form-control" readonly />
+                <span asp-validation-for="OldStudentCourse.CourseCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OldStudentCourse.StudentCourseNo" class="control-label"></label>
+                <input asp-for="OldStudentCourse.StudentCourseNo" class="form-control" readonly />
+                <span asp-validation-for="OldStudentCourse.StudentCourseNo" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Lưu</button>
 
-<form method="post">
-    <div class="form-group">
-        <label asp-for="OldStudentCourse.StudentNo" class="control-label"></label>
-        <input asp-for="OldStudentCourse.StudentNo" class="form-control" readonly />
-        <span asp-validation-for="OldStudentCourse.StudentNo" class="text-danger"></span>
+        </form>
     </div>
-    <div class="form-group">
-        <label asp-for="OldStudentCourse.LastName" class="control-label"></label>
-        <input asp-for="OldStudentCourse.LastName" class="form-control" />
-        <span asp-validation-for="OldStudentCourse.LastName" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="OldStudentCourse.FirstName" class="control-label"></label>
-        <input asp-for="OldStudentCourse.FirstName" class="form-control" />
-        <span asp-validation-for="OldStudentCourse.FirstName" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="OldStudentCourse.UrlHandle" class="control-label"></label>
-        <input asp-for="OldStudentCourse.UrlHandle" class="form-control" />
-        <span asp-validation-for="OldStudentCourse.UrlHandle" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="OldStudentCourse.Email" class="control-label"></label>
-        <input asp-for="OldStudentCourse.Email" class="form-control" />
-        <span asp-validation-for="OldStudentCourse.Email" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="OldStudentCourse.DateOfBirth" class="control-label"></label>
-        <input asp-for="OldStudentCourse.DateOfBirth" class="form-control" type="date" />
-        <span asp-validation-for="OldStudentCourse.DateOfBirth" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="OldStudentCourse.CourseCode" class="control-label"></label>
-        <input asp-for="OldStudentCourse.CourseCode" class="form-control" readonly />
-        <span asp-validation-for="OldStudentCourse.CourseCode" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="OldStudentCourse.StudentCourseNo" class="control-label"></label>
-        <input asp-for="OldStudentCourse.StudentCourseNo" class="form-control" readonly />
-        <span asp-validation-for="OldStudentCourse.StudentCourseNo" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-primary">Lưu</button>
-    </div>
-</form>
+</div>
+
