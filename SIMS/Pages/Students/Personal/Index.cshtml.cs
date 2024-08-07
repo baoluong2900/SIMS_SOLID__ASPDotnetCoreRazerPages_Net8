@@ -49,7 +49,7 @@ namespace SIMS.Pages.Students.Personal
                 _service.UpdateStudentCourse(OldStudentCourse);
                 // Logic to update the StudentCourse to the database goes here
                 _notifyService.Success("Cập nhật thành công");
-                return RedirectToPage("/Student/Personal/Index");
+                return RedirectToPage("/Students/Personal/Index", new { id = idLogin });
 
             }
             catch (Exception ex)
