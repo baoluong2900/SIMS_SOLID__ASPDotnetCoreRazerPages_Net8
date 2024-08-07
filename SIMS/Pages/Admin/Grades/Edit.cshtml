@@ -1,0 +1,30 @@
+﻿@page
+@model SIMS.Pages.Admin.Grades.EditModel
+@{
+    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
+}
+<h2 class="text-center">Chỉnh sửa Điểm</h2>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="OldGrade.GradeId" class="control-label"></label>
+        <input asp-for="OldGrade.GradeId" class="form-control" readonly />
+        <span asp-validation-for="OldGrade.GradeId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OldGrade.StudentNo" class="control-label"></label>
+        <input asp-for="OldGrade.StudentNo" class="form-control" />
+        <span asp-validation-for="OldGrade.StudentNo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OldGrade.CourseCode" class="control-label"></label>
+        <input asp-for="OldGrade.CourseCode" class="form-control" />
+        <span asp-validation-for="OldGrade.CourseCode" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OldGrade.Score" class="control-label"></label>
+        <input asp-for="OldGrade.Score" class="form-control" />
+        <span asp-validation-for="OldGrade.Score" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Cập nhật</button>
+    <a asp-page="/Admin/Grades/Index" class="btn btn-secondary">Quay lại</a>
+</form>

@@ -1,98 +1,72 @@
 ﻿using SIMS.Abstractions;
 using SIMS.Model;
-
-namespace SIMS.DataContexts
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.IO;
+using CsvHelper;
+public class StudentContextCSV : IStudentService
 {
-    public class StudentContextCSV : IStudentService
+    private int nextStudentNo = 1;
+    private readonly IStudentService _studentContext;
+    public List<Student> Students { get; set; }
+    private readonly string filePath = "DataCSV/StudentCSV.csv";
+
+    private readonly ICSVReader _csvReader;
+
+    public StudentContextCSV(IStudentService context)
     {
-        private int nextStudentId = 1;
+        _studentContext = context;
+        Students = _csvReader.ReadCSV<Student>(filePath).ToList();
+    }
 
-        public List<Student> Students { get; set; }
+    public IEnumerable<Student> GetStudents()
+    {
+        return Students;
+    }
 
-        private readonly string filePath;
+    public void AddStudent(Student student)
+    {
+        student.StudentNo = nextStudentNo++.ToString();
+        Students.Add(student);
+        WriteDataToCsv();
+    }
 
-        public StudentContextCSV(string filePath)
+    public void UpdateStudent(Student student)
+    {
+        var existingStudent = Students.FirstOrDefault(s => s.StudentNo == student.StudentNo);
+        if (existingStudent != null)
         {
-            this.filePath = filePath;
-            Students = ReadDataFromCsvAndUpdateId(filePath);
+            existingStudent.LastName = student.LastName;
+            existingStudent.FirstName = student.FirstName;
+            existingStudent.UrlHandle = student.UrlHandle;
+            existingStudent.Email = student.Email;
+            existingStudent.DateOfBirth = student.DateOfBirth;
+            WriteDataToCsv();
         }
+    }
 
-        public List<Student> ReadDataFromCsvAndUpdateId(string filePath)
+    public void DeleteStudent(string studentNo)
+    {
+        var student = Students.FirstOrDefault(s => s.StudentNo == studentNo);
+        if (student != null)
         {
-            List<Student> students = new List<Student>();
-            int nextStudentId = 1; // Reset the counter
-
-            if (File.Exists(filePath))
-            {
-                using (StreamReader reader = new StreamReader(filePath))
-                {
-                    // Skip the header line
-                    reader.ReadLine();
-
-                    while (!reader.EndOfStream)
-                    {
-                        string line = reader.ReadLine();
-                        string[] values = line.Split(',');
-
-                        if (values.Length >= 10)
-                        {
-                            Student student = new Student
-                            {
-                                StudentNo = values[1],
-                                LastName = values[2],
-                                FirstName = values[3],
-                                UrlHandle = values[4],
-                                Email = values[5],
-                                DateOfBirth = DateTime.Parse(values[6]),
-                            };
-
-                            students.Add(student);
-                        }
-                    }
-                }
-            }
-            return students;
+            Students.Remove(student);
+            WriteDataToCsv();
         }
-        private void WriteDataToCsv(string filePath)
-        {
-            using (StreamWriter writer = new StreamWriter(filePath))
-            {
-                // Write header
-                writer.WriteLine("StudentID,StudentNo,LastName,FirstName,UrlHandle,Email,DateOfBirth,UserName,Password");
+    }
 
-                // Write data rows
-                foreach (var student in Students)
-                {
-                    writer.WriteLine($"{student.StudentNo},{student.LastName},{student.FirstName},{student.UrlHandle},{student.Email},{student.DateOfBirth:yyyy-MM-dd}");
-                }
-            }
-        }
+    public Student GetStudent(string studentNo)
+    {
+        return Students.FirstOrDefault(s => s.StudentNo == studentNo);
+    }
 
-
-
-        public void AddStudent(Student student)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteStudent(string studentNo)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Student GetStudent(string studentNo)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Student> GetStudents()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateStudent(Student student)
-        {
-            throw new NotImplementedException();
-        }
+    private void WriteDataToCsv()
+    {
+        using var writer = new StreamWriter(filePath);
+        using var csv = new CsvWriter(writer, new CsvHelper.Configuration.CsvConfiguration(CultureInfo.InvariantCulture));
+        csv.WriteRecords(Students);
     }
 }

@@ -1,0 +1,42 @@
+﻿@page
+@model SIMS.Pages.Admin.Teachers.EditModel
+@{
+    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Chỉnh sửa giáo viên";
+}
+<h1>Chỉnh sửa giáo viên</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="OldTeacher.TeacherNo"></label>
+        <input asp-for="OldTeacher.TeacherNo" class="form-control" readonly />
+        <span asp-validation-for="OldTeacher.TeacherNo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OldTeacher.LastName"></label>
+        <input asp-for="OldTeacher.LastName" class="form-control" />
+        <span asp-validation-for="OldTeacher.LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OldTeacher.FirstName"></label>
+        <input asp-for="OldTeacher.FirstName" class="form-control" />
+        <span asp-validation-for="OldTeacher.FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OldTeacher.Email"></label>
+        <input asp-for="OldTeacher.Email" class="form-control" />
+        <span asp-validation-for="OldTeacher.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OldTeacher.DateOfBirth"></label>
+        <input asp-for="OldTeacher.DateOfBirth" class="form-control" />
+        <span asp-validation-for="OldTeacher.DateOfBirth" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OldTeacher.Department"></label>
+        <input asp-for="OldTeacher.Department" class="form-control" />
+        <span asp-validation-for="OldTeacher.Department" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="/Admin/Teachers/Index" class="btn btn-secondary">Cancel</a>
+</form>

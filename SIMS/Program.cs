@@ -7,6 +7,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 // Add Usage - Notyf
 builder.Services.AddNotyf(config => { config.DurationInSeconds = 3; config.IsDismissable = true; config.Position = NotyfPosition.TopRight; });
@@ -14,11 +21,17 @@ builder.Services.AddScoped<CSVReader>();
 builder.Services.AddScoped<StudentService>();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<CourseService>();
+builder.Services.AddScoped<GradeService>();
+builder.Services.AddScoped<StudentCourseService>();
+builder.Services.AddScoped<TeacherService>();
 
 builder.Services.AddSingleton<ICSVReader, CSVReader>();
 builder.Services.AddSingleton<IStudentService, StudentService>();
 builder.Services.AddSingleton<IAuthService, AuthService>();
 builder.Services.AddSingleton<ICourseService, CourseService>();
+builder.Services.AddSingleton<IGradeService, GradeService>();
+builder.Services.AddSingleton<IStudentCourseService,StudentCourseService>();
+builder.Services.AddSingleton<ITeacherService, TeacherService>();
 
 var app = builder.Build();
 
@@ -36,7 +49,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
+app.UseSession();
 app.MapRazorPages();
 app.UseEndpoints(endpoints =>
 {

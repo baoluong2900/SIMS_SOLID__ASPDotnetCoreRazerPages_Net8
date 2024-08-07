@@ -1,0 +1,52 @@
+﻿@page
+@model SIMS.Pages.Teacher.Courses.CreateModel
+@{
+    Layout = "~/Pages/Shared/_TeacherLayout.cshtml";
+    ViewData["Title"] = "Chỉnh sửa thông tin sinh viên";
+}
+<h2>Thêm Thông tin sinh viên</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="NewStudentCourse.StudentNo" class="control-label"></label>
+        <input asp-for="NewStudentCourse.StudentNo" class="form-control" />
+        <span asp-validation-for="NewStudentCourse.StudentNo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewStudentCourse.LastName" class="control-label"></label>
+        <input asp-for="NewStudentCourse.LastName" class="form-control" />
+        <span asp-validation-for="NewStudentCourse.LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewStudentCourse.FirstName" class="control-label"></label>
+        <input asp-for="NewStudentCourse.FirstName" class="form-control" />
+        <span asp-validation-for="NewStudentCourse.FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewStudentCourse.UrlHandle" class="control-label"></label>
+        <input asp-for="NewStudentCourse.UrlHandle" class="form-control" />
+        <span asp-validation-for="NewStudentCourse.UrlHandle" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewStudentCourse.Email" class="control-label"></label>
+        <input asp-for="NewStudentCourse.Email" class="form-control" />
+        <span asp-validation-for="NewStudentCourse.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewStudentCourse.DateOfBirth" class="control-label"></label>
+        <input asp-for="NewStudentCourse.DateOfBirth" class="form-control" type="date" />
+        <span asp-validation-for="NewStudentCourse.DateOfBirth" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewStudentCourse.CourseCode" class="control-label"></label>
+        <input asp-for="NewStudentCourse.CourseCode" class="form-control" />
+        <span asp-validation-for="NewStudentCourse.CourseCode" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewStudentCourse.StudentCourseNo" class="control-label"></label>
+        <input asp-for="NewStudentCourse.StudentCourseNo" class="form-control" />
+        <span asp-validation-for="NewStudentCourse.StudentCourseNo" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-page="/Teacher/Courses/Index" class="btn btn-secondary">Cancel</a>
+</form>

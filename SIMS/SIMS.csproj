@@ -20,10 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Admin\Teachers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\js\site.js" />
   </ItemGroup>
 

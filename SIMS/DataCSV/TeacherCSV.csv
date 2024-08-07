@@ -1,0 +1,6 @@
+﻿TeacherNo,LastName,FirstName,Email,DateOfBirth,Department
+T001,Smith,John,john.smith@example.com,1980-04-23,Mathematics
+T002,Jones,Emma,emma.jones@example.com,1975-08-12,Physics
+T003,Brown,Michael,michael.brown@example.com,1982-01-15,Chemistry
+T004,Johnson,Linda,linda.johnson@example.com,1990-05-30,Computer Science
+T005,Williams,Emily,emily.williams@example.com,1985-11-20,Biology

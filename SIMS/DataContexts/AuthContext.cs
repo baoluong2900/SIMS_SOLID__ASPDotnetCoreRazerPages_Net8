@@ -8,7 +8,6 @@ namespace SIMS.DataContexts
         private readonly string filePath;
         public List<UserLogin> UserLogins { get; set; }
 
-
         public AuthContext(string filePath, string userName, string password)
         {
             this.filePath = filePath;
@@ -48,7 +47,7 @@ namespace SIMS.DataContexts
             return userLogins;
         }
 
-        public string Login(string username, string password)
+        public UserLogin Login(string username, string password)
         {
             throw new NotImplementedException();
         }
