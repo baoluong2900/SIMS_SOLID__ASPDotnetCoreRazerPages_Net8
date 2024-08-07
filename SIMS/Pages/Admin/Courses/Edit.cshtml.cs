@@ -39,7 +39,7 @@ namespace SIMS.Pages.Admin.Courses
                 _service.UpdateCourse(OldCourse);
                 // Logic to update the course to the database goes here
                 _notifyService.Success("Cập nhật thành công");
-                return RedirectToPage("/Admin/Students/Index");
+                return RedirectToPage("/Admin/Courses/Index");
 
             }
             catch (Exception ex)

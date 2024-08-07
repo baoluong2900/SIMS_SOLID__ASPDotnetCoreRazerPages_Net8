@@ -26,6 +26,9 @@
                         <th>STT</th>
                         <th>Mã Lớp Học</th>
                         <th>Tên Lớp Học</th>
+                        <th>Ngày bắt đầu</th>
+                        <th>Ngày kết thúc</th>
+                        <th>Mô tả</th>
                         <th>#</th>
                     </tr>
                 </thead>
@@ -37,6 +40,9 @@
                             <td>@i</td>
                             <td>@course.CourseCode</td>
                             <td>@course.CourseName</td>
+                            <td>@course.StartDate</td>
+                            <td>@course.EndDate</td>
+                            <td>@course.Description</td>
                             <td>
                                 <a class="anticon anticon-edit btn btn-warning btn-tone m-r-5" asp-page="/Admin/Courses/Edit" asp-route-id="@course.CourseCode">
                                     <i class="fas fa-edit"></i>

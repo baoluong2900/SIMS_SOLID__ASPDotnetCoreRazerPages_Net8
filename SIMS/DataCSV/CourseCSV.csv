@@ -1,5 +1,9 @@
 CourseCode,CourseName,StartDate,EndDate,Description
-CS103,Web Development with ASP.NET,03/01/2024 00:00:00,07/15/2024 00:00:00,Learn to build web applications using ASP.NET Core.
-CS104,Database Systems,04/01/2024 00:00:00,08/15/2024 00:00:00,An overview of database systems and SQL.
-CS105,Software Engineering Principles,05/01/2024 00:00:00,09/15/2024 00:00:00,Study software engineering methodologies and practices.
-609,IT,09/23/8898 00:00:00,09/23/0077 00:00:00,
+CS101,Introduction to Computer Science,01/10/2024 00:00:00,05/15/2024 00:00:00,An introductory course on computer science fundamentals.
+CS102,Data Structures and Algorithms,02/01/2024 00:00:00,06/15/2024 00:00:00,Study of data structures and algorithms for efficient problem solving.
+CS201,Web Development,03/01/2024 00:00:00,07/15/2024 00:00:00,Building and designing websites using modern web technologies.
+CS202,Database Systems,04/01/2024 00:00:00,08/15/2024 00:00:00,Introduction to relational databases and SQL.
+CS301,Software Engineering,05/01/2024 00:00:00,09/15/2024 00:00:00,Techniques and methodologies for software development.
+CS302,Machine Learning,06/01/2024 00:00:00,10/15/2024 00:00:00,Fundamentals of machine learning and its applications.
+CS303,Operating Systems,07/01/2024 00:00:00,11/15/2024 00:00:00,Study of operating system concepts and their implementations.
+CS304,Network Security888,08/01/2024 00:00:00,12/15/2024 00:00:00,

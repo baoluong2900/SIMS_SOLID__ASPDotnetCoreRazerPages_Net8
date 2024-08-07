@@ -47,8 +47,10 @@ namespace SIMS.Services
             if (existingCourse != null)
             {
                 existingCourse.CourseName = course.CourseName;
-                // cập nhạt thêm
                 existingCourse.Description = course.Description;
+                existingCourse.StartDate = course.StartDate;
+                existingCourse.EndDate = course.EndDate;
+
                 
                 SaveChanges();
             }
@@ -66,7 +68,7 @@ namespace SIMS.Services
 
         public Course GetCourse(string courseId)
         {
-            throw new NotImplementedException();
+            return _courses.FirstOrDefault(s => s.CourseCode == courseId);
         }
     }
 }
